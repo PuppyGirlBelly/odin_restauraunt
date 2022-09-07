@@ -1,0 +1,10 @@
+@use 'palette';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: palette.$c1;
+  color: palette.$c5;
+}
