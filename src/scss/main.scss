@@ -1,10 +1,100 @@
+@use 'reset';
 @use 'palette';
 
-* {
-  box-sizing: border-box;
-}
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee&family=Secular+One&family=Titan+One&display=swap');
 
 body {
   background: palette.$c1;
   color: palette.$c5;
+  font-family: 'ABeeZee', sans-serif;
+}
+
+.max-width {
+  max-width: 800px;
+  margin: auto;
+}
+
+.header-text {
+  font-family: 'Secular One', sans-serif;
+  text-rendering: optimizeLegibility;
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.logo {
+  margin: 2rem auto;
+  width: min-content;
+  text-align: center;
+  z-index: 100;
+
+  &-text {
+    font-family: 'Titan One', cursive;
+    font-size: 3.5rem;
+  }
+
+  &-1,
+  &-2 {
+    margin: auto;
+    display: block;
+    width: max-content;
+  }
+
+  &-1 {
+    margin-bottom: -0.5rem;
+    background-color: palette.$c2;
+    transform: rotate(2deg);
+  }
+
+  &-2 {
+    background-color: palette.$c3;
+    transform: rotate(-3deg);
+  }
+}
+
+.navigation {
+  .nav-list {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .nav-item {
+    @extend .header-text;
+    display: inline-block;
+  }
+}
+
+.hero {
+  position: relative;
+
+  background-attachment: fixed;
+  background-color: palette.$c1;
+  background-image: url('../img/hero.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto 100vh;
+
+  image-rendering: pixelated;
+
+  width: 100vw;
+  height: 50vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &-text-wrapper {
+    min-width: min-content;
+    text-align: center;
+  }
+
+  &-text {
+    display: inline;
+
+    background-color: palette.$c5;
+    color: palette.$c1;
+
+    border-left: 12px solid palette.$c5;
+    border-right: 12px solid palette.$c5;
+
+    line-height: 2;
+  }
 }

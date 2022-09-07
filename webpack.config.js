@@ -21,7 +21,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'boilerplate',
       template: 'src/index.html',
-      inject: false,
+      // inject: false,
+      inject: true,
     }),
   ],
   module: {
@@ -62,12 +63,16 @@ module.exports = {
         ],
       },
       {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: 'asset/resource',
+      },
+      {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
       },
       {
-        test: /\.(woff|woff2|eot|ttf|otf)$/i,
-        type: 'asset/resource',
+        test: /\.html$/,
+        use: ['html-loader'],
       },
     ],
   },
@@ -75,7 +80,7 @@ module.exports = {
     extensions: ['.tsx', '.ts', '.js', '...'],
   },
   output: {
-    filename: '[name].bundle.js',
+    filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist/'),
     clean: true,
   },
