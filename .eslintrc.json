@@ -13,6 +13,19 @@
   },
   "plugins": ["@typescript-eslint", "prettier"],
   "rules": {
-    "prettier/prettier": ["error", { "singleQuote": true }]
+    "prettier/prettier": ["error", { "singleQuote": true }],
+    "import/resolver": ["always", {
+      "js": "never",
+      "jsx": "never",
+      "ts": "never",
+      "tsx": "never"
+    }]
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
   }
 }
