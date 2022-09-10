@@ -1,47 +1,13 @@
-function createElement(type: string, classes?: string[]): HTMLElement {
-  const element = document.createElement(type);
-
-  if (classes.length >= 1) {
-    classes.forEach((c) => {
-      element.classList.add(c);
-    });
-  }
-
-  return element;
-}
-
-function createLogo(): HTMLElement {
-  const logo = createElement('div', ['logo', 'width-800px']);
-  const logoText = createElement('h1', ['logo-text']);
-  const logo1 = createElement('span', ['logo-1']);
-  logo1.innerText = "fatty dog's";
-  const logo2 = createElement('span', ['logo-2']);
-  logo2.innerText = 'fat dogs';
-
-  logoText.append(logo1, logo2);
-  logo.appendChild(logoText);
-
-  return logo;
-}
+import header from './header';
 
 export default function populatePage() {
   const content = document.getElementById('content');
 
-  content.appendChild(createLogo());
-  content.appendChild(createElement('div', ['nav-bar']));
+  content.appendChild(header());
 
   return content;
 }
-
-// <div class="nav-bar">
-//   <nav class="navigation width-800px">
-//     <ul class="nav-list">
-//       <li class="nav-item"><a href="#">HOME</a></li>
-//       <li class="nav-item"><a href="#">MENU</a></li>
-//       <li class="nav-item"><a href="#">CONTACT</a></li>
-//     </ul>
-//   </nav>
-// </div>
+//
 // <div class="hero">
 //   <div class="hero-text-wrapper">
 //     <p class="hero-text big-text">The most dog.</p>
