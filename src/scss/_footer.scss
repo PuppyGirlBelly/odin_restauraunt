@@ -1,0 +1,12 @@
+.footer {
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+
+  .github-logo {
+    height: 1.5rem;
+    display: inline-block;
+    vertical-align: text-bottom;
+    filter: invert(44%) sepia(13%) saturate(322%) hue-rotate(221deg) brightness(88%) contrast(88%);
+  }
+}

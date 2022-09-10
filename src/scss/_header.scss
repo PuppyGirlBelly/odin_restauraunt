@@ -1,0 +1,61 @@
+@use 'palette';
+@use 'common';
+
+.logo {
+  margin: 2rem auto;
+  width: min-content;
+  text-align: center;
+  z-index: 100;
+
+  &-text {
+    font-family: 'Titan One', cursive;
+    font-size: 3.5rem;
+  }
+
+  &-1,
+  &-2 {
+    margin: auto;
+    display: block;
+    width: max-content;
+  }
+
+  &-1 {
+    background-color: palette.$c2;
+    border-left: 12px solid palette.$c2;
+    border-right: 12px solid palette.$c2;
+
+    margin-bottom: -0.5rem;
+    transform: rotate(2deg);
+  }
+
+  &-2 {
+    background-color: palette.$c3;
+    border-left: 12px solid palette.$c3;
+    border-right: 12px solid palette.$c3;
+
+    transform: rotate(-3deg);
+  }
+}
+
+.nav-bar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  background: palette.$c4;
+  color: palette.$c1;
+
+  .navigation {
+    .nav-list {
+      display: flex;
+      flex-flow: row;
+      justify-content: space-around;
+    }
+
+    .nav-item {
+      @extend .big-text;
+      @extend .link;
+    }
+  }
+}
+

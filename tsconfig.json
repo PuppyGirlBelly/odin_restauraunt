@@ -1,5 +1,5 @@
 {
-  "files": ["src/ts/index.ts", "src/ts/types/custom.d.ts", "./src/ts/functions.ts", "./src/ts/header.ts"],
+  "files": ["src/ts/index.ts", "src/ts/types/custom.d.ts", "./src/ts/functions.ts", "./src/ts/header.ts", "./src/ts/footer.ts"],
   "compilerOptions": {
     "outDir": "./dist/js/",
     "sourceMap": true,

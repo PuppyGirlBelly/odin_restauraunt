@@ -1,5 +1,12 @@
 import '../scss/main.scss';
-import populatePage from './home';
+import header from './header';
+import footer from './footer';
+import home from './home';
 
-const content = populatePage();
-document.body.appendChild(content);
+export default function populatePage() {
+  header();
+  home();
+  footer();
+}
+
+populatePage();

@@ -1,0 +1,52 @@
+@use 'palette';
+
+.hero {
+  position: relative;
+
+  background-attachment: fixed;
+  background-color: palette.$c1;
+  background-image: url('../img/hero.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto 100vh;
+
+  image-rendering: pixelated;
+
+  width: 100vw;
+  height: clamp(40vh, 40vw, 50vh);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &-text-wrapper {
+    min-width: min-content;
+    text-align: center;
+  }
+
+  &-text {
+    display: inline;
+
+    background-color: palette.$c5;
+    color: palette.$c1;
+
+    border-left: 12px solid palette.$c5;
+    border-right: 12px solid palette.$c5;
+
+    line-height: 2;
+  }
+}
+
+.below-fold {
+  text-align: center;
+
+  & > * {
+    margin-top: 2rem;
+  }
+
+  .hours{
+    text-align: left;
+    border-collapse: separate;
+    border-spacing: 1rem 0.5rem;
+  }
+}
