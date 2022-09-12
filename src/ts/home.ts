@@ -1,3 +1,5 @@
+import '../scss/home.scss';
+
 import {
   createAnchor,
   createElement,

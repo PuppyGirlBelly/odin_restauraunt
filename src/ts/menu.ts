@@ -1,3 +1,4 @@
+// import '../scss/menu.scss';
 import { createElement } from './functions';
 
 export default function menu(): HTMLElement {

@@ -1,3 +1,4 @@
+import '../scss/footer.scss';
 import { createElement, createAnchor, appendToContent } from './functions';
 import GitIcon from '../img/github.svg';
 

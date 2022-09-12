@@ -1,3 +1,4 @@
+// import '../scss/contacts.scss';
 import { createElement } from './functions';
 
 export default function contact(): HTMLElement {

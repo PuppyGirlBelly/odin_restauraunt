@@ -1,9 +1,5 @@
 @use 'reset';
 @use 'palette';
-@use 'common';
-@use 'header';
-@use 'home';
-@use 'footer';
 
 @import url('https://fonts.googleapis.com/css2?family=ABeeZee&family=Secular+One&family=Titan+One&display=swap');
 
@@ -16,3 +12,73 @@ body {
 #content {
   min-height: 100vh;
 }
+
+.dark-on-light {
+  background-color: palette.$c1;
+  color: palette.$c5;
+}
+
+.light-on-dark {
+  background-color: palette.$c4;
+  color: palette.$c1;
+}
+
+.italic {
+  font-style: italic;
+  text-rendering: optimizeLegibility;
+}
+
+.bold {
+  font-weight: bold;
+  text-rendering: optimizeLegibility;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.center {
+  margin: auto;
+}
+
+.width-800px {
+  @extend .center;
+  max-width: 800px;
+}
+
+.width-600px {
+  @extend .center;
+  max-width: 600px;
+}
+
+.padding-1rem {
+  padding: 1rem;
+}
+
+.medium-text {
+  @extend .bold;
+  font-size: clamp(1.2rem, 2vw, 2rem);
+  vertical-align: bottom;
+  margin-right: 0.25rem;
+}
+
+.big-text {
+  font-family: 'Secular One', sans-serif;
+  text-rendering: optimizeLegibility;
+  font-size: clamp(2rem, 5vw, 3rem);
+  vertical-align: bottom;
+}
+
+.link {
+  text-decoration: palette.$c2 wavy underline;
+
+  &:hover, &:active {
+    color: palette.$c2;
+    cursor: pointer;
+  }
+
+  &:focus-visible {
+    outline: 2px solid palette.$c5;
+  }
+}
+

@@ -1,7 +1,8 @@
+import '../scss/header.scss';
 import { createElement, appendToContent } from './functions';
 
 function createLogo(): HTMLElement {
-  const logo = createElement('div', ['logo', 'width-800px']);
+  const logo = createElement('div', ['logo']);
   const logoText = createElement('h1', ['logo-text']);
   const logo1 = createElement('span', ['logo-1'], "fatty dog's");
   const logo2 = createElement('span', ['logo-2'], 'fat dogs');

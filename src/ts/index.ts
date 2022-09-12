@@ -1,4 +1,3 @@
-import '../scss/main.scss';
 import { createElement } from './functions';
 import header from './header';
 import home from './home';
