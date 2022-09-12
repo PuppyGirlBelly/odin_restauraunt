@@ -61,6 +61,11 @@
 
   &:hover, &:active {
     color: palette.$c2;
+    cursor: pointer;
+  }
+
+  &:focus-visible {
+    outline: 2px solid palette.$c5;
   }
 }
 

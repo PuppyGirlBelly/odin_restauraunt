@@ -1,4 +1,4 @@
-import { createElement, createAnchor, appendToContent } from './functions';
+import { createElement, appendToContent } from './functions';
 
 function createLogo(): HTMLElement {
   const logo = createElement('div', ['logo', 'width-800px']);
@@ -17,8 +17,14 @@ function createNavBar(): HTMLElement {
   const navBar = createElement('nav', ['navigation', 'width-800px']);
   const navList = createElement('ul', ['nav-list']);
   const item1 = createElement('li', ['nav-item'], 'HOME');
+  item1.id = 'home';
+  item1.tabIndex = 1;
   const item2 = createElement('li', ['nav-item'], 'MENU');
+  item2.id = 'menu';
+  item2.tabIndex = 2;
   const item3 = createElement('li', ['nav-item'], 'CONTACT');
+  item3.id = 'contact';
+  item3.tabIndex = 3;
 
   wrapper.appendChild(navBar);
   navBar.appendChild(navList);

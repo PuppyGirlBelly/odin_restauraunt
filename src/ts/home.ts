@@ -33,7 +33,7 @@ function whoWeAre(): HTMLElement {
   const annaLee = createAnchor('https://transbian.gay', ['link'], 'AnnaLee');
 
   whoWeAre.prepend(header);
-  whoWeAre.append(webpack, ' by ', annaLee, '. A good Doggo');
+  whoWeAre.append(webpack, ' by ', annaLee, '. A good Doggo.');
 
   return whoWeAre;
 }
@@ -104,11 +104,11 @@ function belowFold(): HTMLElement {
   return belowFold;
 }
 
-export default function home(): void {
-  const home = createElement('main');
+export default function home(): HTMLElement {
+  const home = createElement('div');
 
   home.appendChild(hero());
   home.appendChild(belowFold());
 
-  appendToContent(home);
+  return home;
 }
