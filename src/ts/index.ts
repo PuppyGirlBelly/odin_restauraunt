@@ -43,7 +43,8 @@ export default function populatePage() {
 
   header();
   content.appendChild(main);
-  main.appendChild(home());
+  // main.appendChild(home());
+  main.appendChild(menu());
   footer();
 }
 

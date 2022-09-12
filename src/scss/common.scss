@@ -69,6 +69,13 @@ body {
   vertical-align: bottom;
 }
 
+.title {
+  font-family: 'Secular One', sans-serif;
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  text-align: center;
+  text-rendering: optimizeLegibility;
+}
+
 .link {
   text-decoration: palette.$c2 wavy underline;
 
