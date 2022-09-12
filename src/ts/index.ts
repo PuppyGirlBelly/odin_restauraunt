@@ -1,9 +1,9 @@
-import { createElement } from './functions';
-import header from './header';
-import home from './home';
-import menu from './menu';
-import contact from './contact';
-import footer from './footer';
+import { createElement } from './common';
+import header from './components/header';
+import footer from './components/footer';
+import home from './pages/home';
+import menu from './pages/menu';
+import contact from './pages/contact';
 
 function clearMain(child: HTMLElement): void {
   let main = document.getElementById('main');

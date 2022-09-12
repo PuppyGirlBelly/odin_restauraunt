@@ -1,11 +1,11 @@
-import '../scss/home.scss';
+import '/src/scss/pages/home.scss';
 
 import {
   createAnchor,
   createElement,
   appendToContent,
   createTableRow,
-} from './functions';
+} from '../common';
 
 function hero(): HTMLElement {
   const hero = createElement('div', ['hero']);

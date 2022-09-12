@@ -1,5 +1,13 @@
 {
-  "files": ["src/ts/index.ts", "src/ts/types/custom.d.ts", "./src/ts/functions.ts", "./src/ts/header.ts", "./src/ts/footer.ts", "./src/ts/menu.ts", "./src/ts/contact.ts"],
+  "files": [
+    "./src/ts/index.ts",
+    "./src/ts/common.ts",
+    "./src/ts/components/header.ts",
+    "./src/ts/components/footer.ts",
+    "./src/ts/pages/menu.ts",
+    "./src/ts/pages/contact.ts",
+    "./src/ts/types/custom.d.ts"
+  ],
   "compilerOptions": {
     "outDir": "./dist/js/",
     "sourceMap": true,

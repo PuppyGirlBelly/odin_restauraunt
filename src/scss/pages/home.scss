@@ -1,12 +1,12 @@
-@use 'palette';
-@use 'main';
+@use '../palette';
+@use '../common';
 
 .hero {
   position: relative;
 
   background-attachment: fixed;
   background-color: palette.$c1;
-  background-image: url('../img/hero.jpg');
+  background-image: url('/src/img/hero.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: auto 100vh;

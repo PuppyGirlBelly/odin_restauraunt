@@ -1,5 +1,5 @@
-import '../scss/header.scss';
-import { createElement, appendToContent } from './functions';
+import '/src/scss/components/header.scss';
+import { createElement, appendToContent } from '../common';
 
 function createLogo(): HTMLElement {
   const logo = createElement('div', ['logo']);
