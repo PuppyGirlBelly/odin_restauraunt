@@ -9,14 +9,38 @@ input=$1
 file="${input%.*}"
 extension="${input##*.}"
 output="${file}_dithered.${extension}"
+size="325x325"
 
-convert -size 1x1 \
-  xc:"#FFCDB1" \
-  xc:"#FFB4A2" \
-  xc:"#E5989B" \
-  xc:"#B5838D" \
-  xc:"#6D6875" \
-  -append txt:- |\
-convert $input -strip -coalesce -ordered-dither o4x4 -remap txt:- -layers optimize $output
+if [ $extension = "gif" ];
+then
+  convert -size 1x1 \
+    xc:"#FFCDB1" \
+    xc:"#FFB4A2" \
+    xc:"#E5989B" \
+    xc:"#B5838D" \
+    xc:"#6D6875" \
+    -append txt:- |\
+  convert $input -strip -coalesce -resize $size\> -ordered-dither o4x4 -remap txt:- -layers optimize $output
+elif [ $extension = 'jpg' ] || [ $extension = 'jpeg' ]
+then
+  output="${file}_dithered.png"
+  convert -size 1x1 \
+    xc:"#FFCDB1" \
+    xc:"#FFB4A2" \
+    xc:"#E5989B" \
+    xc:"#B5838D" \
+    xc:"#6D6875" \
+    -append txt:- |\
+  convert $input -resize $size\> -ordered-dither o4x4 -remap txt:- $output
+else
+  convert -size 1x1 \
+    xc:"#FFCDB1" \
+    xc:"#FFB4A2" \
+    xc:"#E5989B" \
+    xc:"#B5838D" \
+    xc:"#6D6875" \
+    -append txt:- |\
+  convert $input -resize $size\> -ordered-dither o4x4 -remap txt:- $output
+fi
 
 echo "Written to $output!"

@@ -88,18 +88,18 @@ export function createTableRow(cells: string[]): HTMLElement {
  * createCard
  * Returns an html 'card' element featuring an img, title, and description
  *
- * @param src - string containing the path for the image element
+ * @param img - string containing the path for the image element
  * @param title - string containing the title for the card
  * @param desc - string containing the description for the card
  */
-export function createCard(src: string, title: string, desc: string): HTMLElement {
+export function createCard(img: string, title: string, desc: string): HTMLElement {
   const card = createElement('div', ['card']);
   const cardTitle = createElement('p', ['card-title'], title);
   const cardDesc = createElement('p', ['card-desc'], desc);
 
   const image = new Image();
   image.classList.add('card-img');
-  image.src = src;
+  image.src = img;
 
   card.append(image, cardTitle, cardDesc);
 
