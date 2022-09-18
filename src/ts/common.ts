@@ -85,6 +85,36 @@ export function createTableRow(cells: string[]): HTMLElement {
 }
 
 /**
+ * createList
+ * creates an ordered or unordered list consisting of a list of strings or
+ * HTMLElements.
+ *
+ * @param ordered - true if ordered list, false for unordered list
+ * @param items - string of text or html elements in list
+ * @param classes - classes for outer list element
+ */
+export function createList(
+  ordered: boolean,
+  items: string[] | HTMLElement[],
+  classes?: string[]
+): HTMLElement {
+  const list = ordered
+    ? createElement('ol', classes)
+    : createElement('ul', classes);
+
+  items.forEach((element) => {
+    if (typeof element === 'string') {
+      const e = createElement('li', ['list-item'], element);
+      list.append(e);
+    } else {
+      list.append(element);
+    }
+  });
+
+  return list;
+}
+
+/**
  * createCard
  * Returns an html 'card' element featuring an img, title, and description
  *
@@ -92,10 +122,21 @@ export function createTableRow(cells: string[]): HTMLElement {
  * @param title - string containing the title for the card
  * @param desc - string containing the description for the card
  */
-export function createCard(img: string, title: string, desc: string): HTMLElement {
+export function createCard(
+  img: string,
+  title: string,
+  desc: string | HTMLElement
+): HTMLElement {
   const card = createElement('div', ['card']);
   const cardTitle = createElement('p', ['card-title'], title);
-  const cardDesc = createElement('p', ['card-desc'], desc);
+  let cardDesc: HTMLElement;
+
+  if (typeof desc === 'string') {
+    cardDesc = createElement('div', ['card-desc'], desc);
+  } else {
+    cardDesc = createElement('div', ['card-desc']);
+    cardDesc.appendChild(desc);
+  }
 
   const image = new Image();
   image.classList.add('card-img');

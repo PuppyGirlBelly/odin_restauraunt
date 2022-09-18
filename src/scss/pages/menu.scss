@@ -1,36 +1,62 @@
 @use '../common';
 @use '../palette';
 
-.menu-cards {
+.card {
+  @extend .light-on-dark;
+
+  border-top: 12px dashed palette.$c3;
+  border-bottom: 12px dashed palette.$c3;
+
+  .card-img {
+    margin: auto;
+    margin-top: 25px;
+  }
+
+  .card-title {
+    @extend .medium-text;
+  }
+
+  .card-title,
+  .card-desc {
+    margin: 25px;
+    margin-top: 12px;
+  }
+}
+
+.title {
+  text-decoration: underline dashed palette.$c4;
+}
+
+.header {
+  @extend .big-text;
+  @extend .light-on-dark;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.dog-cards {
   @extend .width-800px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 50px;
   margin-top: 25px;
-
-  .card {
-    @extend .light-on-dark;
-
-    border-top: 12px dashed palette.$c3;
-    border-bottom: 12px dashed palette.$c3;
-
-    .card-img {
-      margin: auto;
-      margin-top: 25px;
-    }
-
-    .card-title {
-      @extend .medium-text;
-    }
-
-    .card-title,
-    .card-desc {
-      margin: 25px;
-      margin-top: 12px;
-    }
-  }
 }
 
-.sides {
-  margin-top: 50px;
+.sides-cards, .drink-cards {
+  @extend .width-800px;
+
+  .card {
+    margin-top: 50px;
+  }
+
+  .card-title {
+    @extend .big-text;
+    text-align: center;
+  }
+
+  .list-item {
+    list-style-type: disc;
+    margin-left: 25px;
+  }
 }
