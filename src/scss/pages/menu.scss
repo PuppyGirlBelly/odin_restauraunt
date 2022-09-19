@@ -30,7 +30,9 @@
 
 .header {
   @extend .big-text;
-  @extend .light-on-dark;
+  // @extend .light-on-dark;
+  background-color: palette.$c2;
+  color: palette.$c5;
   text-align: center;
   padding-top: 100px;
 }
