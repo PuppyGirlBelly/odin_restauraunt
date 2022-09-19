@@ -9,7 +9,7 @@ input=$1
 file="${input%.*}"
 extension="${input##*.}"
 output="${file}_dithered.${extension}"
-size="325x325"
+size="800x800"
 
 if [ $extension = "gif" ];
 then

@@ -44,7 +44,8 @@ export default function populatePage() {
   header();
   content.appendChild(main);
   // main.appendChild(home());
-  main.appendChild(menu());
+  // main.appendChild(menu());
+  main.appendChild(contact());
   footer();
 }
 

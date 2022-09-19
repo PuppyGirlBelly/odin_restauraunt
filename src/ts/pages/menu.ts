@@ -1,5 +1,5 @@
 import '/src/scss/pages/menu.scss';
-import { createCard, createElement, createList } from '../common';
+import { createAnchor, createCard, createElement, createList } from '../common';
 import plainDog from '/src/img/dog_plain.png';
 import chiliDog from '/src/img/dog_chiliCheese.png';
 import spicyDog from '/src/img/dog_hotNSpicy.png';
@@ -29,7 +29,8 @@ function dogsHeader() {
 }
 
 function dogs() {
-  const dogs = createElement('div', ['dog-cards']);
+  const dogs = createElement('div', ['dogs']);
+  const dogCards = createElement('div', ['dog-cards']);
   const card1 = createCard(
     plainDog,
     'Plain+ Dog!',
@@ -58,14 +59,22 @@ function dogs() {
     \n\n $6.00'
   );
 
-  dogs.append(card1, card2, card3, card4);
+  dogs.appendChild(dogCards);
+  dogCards.append(card1, card2, card3, card4);
+
+  const dogAttribution = createAnchor(
+    'https://unsplash.com/photos/4PWmqIUlGFQ',
+    ['attribution', 'link'],
+    'Image Courtesy of @ballparkbrand at Unsplash'
+  );
+  dogs.append(dogAttribution);
 
   return dogs;
 }
 
 function sideHeader(): HTMLElement {
   const header = createElement('div', ['header']);
-  const subheader = createElement('h3', ['big-text', 'light-on-dark'], 'Sides');
+  const subheader = createElement('h3', ['big-text'], 'Sides');
   const description = createElement(
     'p',
     ['medium-text'],
@@ -156,22 +165,26 @@ function chips() {
 }
 
 function sides() {
-  const sides = createElement('div', ['sides-cards']);
+  const sides = createElement('div', ['sides']);
+  const sideCards = createElement('div', ['sides-cards']);
+  const sidesAttribution = createAnchor(
+    'https://unsplash.com/photos/a7L6qXrbNLc',
+    ['attribution', 'link'],
+    'Image Courtesy of Syed F Hashemi at Unsplash'
+  );
 
-  sides.append(fries());
-  sides.append(poutine());
-  sides.append(chips());
+  sides.appendChild(sideCards);
+  sideCards.append(fries());
+  sideCards.append(poutine());
+  sideCards.append(chips());
+  sides.append(sidesAttribution);
 
   return sides;
 }
 
 function drinkHeader(): HTMLElement {
   const header = createElement('div', ['header']);
-  const subheader = createElement(
-    'h3',
-    ['big-text', 'light-on-dark'],
-    'Drinks'
-  );
+  const subheader = createElement('h3', ['big-text'], 'Drinks');
   const description = createElement('p', ['medium-text'], '');
 
   header.appendChild(subheader);
@@ -210,10 +223,18 @@ function beer(): HTMLElement {
 }
 
 function drinks() {
-  const drinks = createElement('div', ['drink-cards']);
+  const drinks = createElement('div', ['drinks']);
+  const drinkCards = createElement('div', ['drink-cards']);
+  const drinksAttribution = createAnchor(
+    'https://unsplash.com/photos/qbGauEOjoAs',
+    ['attribution', 'link'],
+    'Image Courtesy of James yarema at Unsplash'
+  );
 
-  drinks.appendChild(pops());
-  drinks.appendChild(beer());
+  drinks.appendChild(drinkCards);
+  drinkCards.appendChild(pops());
+  drinkCards.appendChild(beer());
+  drinks.appendChild(drinksAttribution);
 
   return drinks;
 }

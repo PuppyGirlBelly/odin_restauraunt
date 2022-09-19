@@ -2,7 +2,7 @@
 @use '../palette';
 
 .card {
-  @extend .light-on-dark;
+  @extend .dark-on-light;
 
   border-top: 12px dashed palette.$c3;
   border-bottom: 12px dashed palette.$c3;
@@ -24,23 +24,61 @@
 }
 
 .title {
-  text-decoration: underline dashed palette.$c4;
+  background-color: palette.$c5;
+  color: palette.$c1;
 }
 
 .header {
   @extend .big-text;
   @extend .light-on-dark;
   text-align: center;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  padding-top: 100px;
 }
 
-.dog-cards {
-  @extend .width-800px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 50px;
-  margin-top: 25px;
+.attribution {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+
+  background: palette.$c1;
+  font-size: 0.75rem;
+}
+
+.dogs, .sides, .drinks {
+  background-attachment: fixed;
+  background-color: palette.$c1;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  image-rendering: pixelated;
+
+  padding-top: 50px;
+  padding-bottom: 50px;
+  position: relative;
+}
+
+.dogs {
+  background-image: url('../../img/dog_bg.png');
+  padding-top: 50px;
+  padding-bottom: 50px;
+  position: relative;
+
+  .dog-cards {
+    @extend .width-800px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+    margin-top: 25px;
+  }
+}
+
+.sides {
+  background-image: url('../../img/sides_bg.png');
+}
+
+.drinks {
+  background-image: url('../../img/drinks_bg.png');
 }
 
 .sides-cards, .drink-cards {
