@@ -6,7 +6,7 @@ import menu from './pages/menu';
 import contact from './pages/contact';
 
 function clearMain(child: HTMLElement): void {
-  let main = document.getElementById('main');
+  const main = document.getElementById('main');
 
   if (main !== null) {
     main.innerText = '';
@@ -27,9 +27,9 @@ function setContact(): void {
 }
 
 function setNavEventListeners(): void {
-  let homeBtn = document.getElementById('home');
-  let menuBtn = document.getElementById('menu');
-  let contactBtn = document.getElementById('contact');
+  const homeBtn = document.getElementById('home');
+  const menuBtn = document.getElementById('menu');
+  const contactBtn = document.getElementById('contact');
 
   homeBtn.addEventListener('click', setHome);
   menuBtn.addEventListener('click', setMenu);

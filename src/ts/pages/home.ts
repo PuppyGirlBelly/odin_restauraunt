@@ -1,14 +1,8 @@
-import '/src/scss/pages/home.scss';
-
-import {
-  createAnchor,
-  createElement,
-  appendToContent,
-  createTableRow,
-} from '../common';
+import '../../scss/pages/home.scss';
+import { createAnchor, createElement, createTableRow } from '../common';
 
 function hero(): HTMLElement {
-  const hero = createElement('div', ['hero']);
+  const heroImage = createElement('div', ['hero']);
   const wrapper = createElement('div', ['hero-text-wrapper']);
   const text1 = createElement('p', ['hero-text', 'big-text'], 'The most dog.');
   const newLine = createElement('br');
@@ -18,31 +12,31 @@ function hero(): HTMLElement {
     'For the goodest dogs.'
   );
 
-  hero.appendChild(wrapper);
+  heroImage.appendChild(wrapper);
   wrapper.append(text1, newLine, text2);
 
-  return hero;
+  return heroImage;
 }
 
 function whoWeAre(): HTMLElement {
   const header = createElement('h2', ['big-text'], 'Who we are');
-  const whoWeAre = createElement(
+  const wwaDiv = createElement(
     'div',
     ['light-on-dark', 'padding-1rem'],
     'This site is an experiment in building a site in '
   );
-  const webpack = createAnchor('https://webpack.js.org/', ['link'], 'webpack');
-  const annaLee = createAnchor('https://transbian.gay', ['link'], 'AnnaLee');
+  const webpack = createAnchor(['link'], 'webpack', 'https://webpack.js.org/');
+  const annaLee = createAnchor(['link'], 'AnnaLee', 'https://transbian.gay');
 
-  whoWeAre.prepend(header);
-  whoWeAre.append(webpack, ' by ', annaLee, '. A good Doggo.');
+  wwaDiv.prepend(header);
+  wwaDiv.append(webpack, ' by ', annaLee, '. A good Doggo.');
 
-  return whoWeAre;
+  return wwaDiv;
 }
 
 function hours(): HTMLElement {
   const header = createElement('h2', ['big-text'], 'Hours');
-  const hours = createElement('div', ['light-on-dark', 'padding-1rem']);
+  const hoursDiv = createElement('div', ['light-on-dark', 'padding-1rem']);
   const table = createElement('table', ['hours', 'width-800px']);
   const tableRows: string[][] = [
     ['Sunday', '11:00 am - 7:00 pm'],
@@ -60,27 +54,27 @@ function hours(): HTMLElement {
     table.appendChild(tr);
   });
 
-  hours.appendChild(header);
-  hours.appendChild(table);
+  hoursDiv.appendChild(header);
+  hoursDiv.appendChild(table);
 
-  return hours;
+  return hoursDiv;
 }
 
 function location(): HTMLElement {
-  const location = createElement(
+  const locationDiv = createElement(
     'div',
     ['light-on-dark', 'padding-1rem'],
     '10329 82 Ave, River Grove, Washington'
   );
   const header = createElement('h2', ['big-text'], 'Location');
 
-  location.prepend(header);
+  locationDiv.prepend(header);
 
-  return location;
+  return locationDiv;
 }
 
 function belowFold(): HTMLElement {
-  const belowFold = createElement('div', ['below-fold']);
+  const belowFoldDiv = createElement('div', ['below-fold']);
   const about = createElement('div', ['width-600px', 'padding-1rem']);
   const em1 = createElement(
     'em',
@@ -98,19 +92,19 @@ function belowFold(): HTMLElement {
     em3
   );
 
-  belowFold.appendChild(about);
-  belowFold.appendChild(whoWeAre());
-  belowFold.appendChild(hours());
-  belowFold.appendChild(location());
+  belowFoldDiv.appendChild(about);
+  belowFoldDiv.appendChild(whoWeAre());
+  belowFoldDiv.appendChild(hours());
+  belowFoldDiv.appendChild(location());
 
-  return belowFold;
+  return belowFoldDiv;
 }
 
 export default function home(): HTMLElement {
-  const home = createElement('div');
+  const homeDiv = createElement('div');
 
-  home.appendChild(hero());
-  home.appendChild(belowFold());
+  homeDiv.appendChild(hero());
+  homeDiv.appendChild(belowFold());
 
-  return home;
+  return homeDiv;
 }

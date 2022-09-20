@@ -1,4 +1,4 @@
-import '/src/scss/components/header.scss';
+import '../../scss/components/header.scss';
 import { createElement, appendToContent } from '../common';
 
 function createLogo(): HTMLElement {

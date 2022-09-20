@@ -1,13 +1,13 @@
-import '/src/scss/pages/menu.scss';
+import '../../scss/pages/menu.scss';
+import plainDog from '../../img/dog_plain.png';
+import chiliDog from '../../img/dog_chiliCheese.png';
+import spicyDog from '../../img/dog_hotNSpicy.png';
+import chickDog from '../../img/dog_chicken.png';
+import friesSide from '../../img/side_fries.png';
+import poutiSide from '../../img/side_poutine.png';
+import chipsSide from '../../img/side_chips.png';
+import popImg from '../../img/drink_coke.png';
 import { createAnchor, createCard, createElement, createList } from '../common';
-import plainDog from '/src/img/dog_plain.png';
-import chiliDog from '/src/img/dog_chiliCheese.png';
-import spicyDog from '/src/img/dog_hotNSpicy.png';
-import chickDog from '/src/img/dog_chicken.png';
-import friesSide from '/src/img/side_fries.png';
-import poutiSide from '/src/img/side_poutine.png';
-import chipsSide from '/src/img/side_chips.png';
-import popImg from '/src/img/drink_coke.png';
 
 function menuTitle() {
   const title = createElement('h2', ['title'], 'MENU');
@@ -29,47 +29,47 @@ function dogsHeader() {
 }
 
 function dogs() {
-  const dogs = createElement('div', ['dogs']);
+  const dogDiv = createElement('div', ['dogs']);
   const dogCards = createElement('div', ['dog-cards']);
   const card1 = createCard(
     plainDog,
     'Plain+ Dog!',
-    "A plain dog! But not just a plain dog! We will add any toppings you \
-    want, just ask one of our staff for a list and we'll build it to your \
-    liking! Or keep it plain! \n\n $4.00"
+    'A plain dog! But not just a plain dog! We will add any toppings you' +
+      "want, just ask one of our staff for a list and we'll build it to your" +
+      'liking! Or keep it plain! \n\n $4.00'
   );
   const card2 = createCard(
     chiliDog,
     'Chili Cheese Dog!',
-    'A classic Chili Cheese Dog! Gots the chili on it, and the cheese, some \
-    grilled onions, and an all-beef dog sitting on a bed of our Signature Dog \
-    Sauce! \n\n $8.00'
+    'A classic Chili Cheese Dog! Gots the chili on it, and the cheese, some' +
+      'grilled onions, and an all-beef dog sitting on a bed of our Signature' +
+      'Dog Sauce! \n\n $8.00'
   );
   const card3 = createCard(
     spicyDog,
     "The Hot 'n Spicy Dog!",
-    'A real hot dog! Made fresh with our spicy pepper relish, cilantro, \
-    jalapeño aoili and our Signature Dog Sauce! \n\n $6.00'
+    'A real hot dog! Made fresh with our spicy pepper relish, cilantro,' +
+      'jalapeño aoili and our Signature Dog Sauce! \n\n $6.00'
   );
   const card4 = createCard(
     chickDog,
     'The Chicken Dog!',
-    'The chaotic good dog! Have a chicken tender seated in a bun with \
-    Japanese Mayo and Sweet Chili Sauce! Or ask our staff for other toppings! \
-    \n\n $6.00'
+    'The chaotic good dog! Have a chicken tender seated in a bun with' +
+      'Japanese Mayo and Sweet Chili Sauce! Or ask our staff for other' +
+      'toppings!\n\n $6.00'
   );
 
-  dogs.appendChild(dogCards);
+  dogDiv.appendChild(dogCards);
   dogCards.append(card1, card2, card3, card4);
 
   const dogAttribution = createAnchor(
-    'https://unsplash.com/photos/4PWmqIUlGFQ',
     ['attribution', 'link'],
-    'Image Courtesy of @ballparkbrand at Unsplash'
+    'Image Courtesy of @ballparkbrand at Unsplash',
+    'https://unsplash.com/photos/4PWmqIUlGFQ'
   );
-  dogs.append(dogAttribution);
+  dogDiv.append(dogAttribution);
 
-  return dogs;
+  return dogDiv;
 }
 
 function sideHeader(): HTMLElement {
@@ -91,9 +91,9 @@ function fries() {
   const friesDesc = createElement(
     'div',
     undefined,
-    'Your classic shoestring french fries, made with russet potatoes and \
-    premium seasonings! Comes with your choice of ketchup, japanese mayo, or \
-    jalapeño aoili!\n'
+    'Your classic shoestring french fries, made with russet potatoes and' +
+      'premium seasonings! Comes with your choice of ketchup, japanese mayo,' +
+      'or jalapeño aoili!\n'
   );
   const friesList = createList(false, [
     'Sea Salt Fries',
@@ -109,17 +109,17 @@ function fries() {
 
   friesDesc.append(friesList, friesPrice);
 
-  const fries = createCard(friesSide, 'Fries!', friesDesc);
+  const friesDiv = createCard(friesSide, 'Fries!', friesDesc);
 
-  return fries;
+  return friesDiv;
 }
 
 function poutine() {
   const poutineDesc = createElement(
     'div',
     undefined,
-    'Our favorite poutine, made with russet potatoes, sausage gravy, and \
-    topped with our meanest spices! Go ahead, treat yourself!\n\n'
+    'Our favorite poutine, made with russet potatoes, sausage gravy, and' +
+      'topped with our meanest spices! Go ahead, treat yourself!\n\n'
   );
   const poutineList = createList(false, [
     'Classic Poutine',
@@ -135,17 +135,17 @@ function poutine() {
 
   poutineDesc.append(poutineList, poutinePrice);
 
-  const poutine = createCard(poutiSide, 'Poutine!', poutineDesc);
+  const poutineDiv = createCard(poutiSide, 'Poutine!', poutineDesc);
 
-  return poutine;
+  return poutineDiv;
 }
 
 function chips() {
   const chipsDesc = createElement(
     'div',
     undefined,
-    'Your favorite classic snacks, what goes better with (or on top) of a good\
-    dog?\n\n'
+    'Your favorite classic snacks, what goes better with (or on top) of a' +
+      'good dog?\n\n'
   );
   const chipsList = createList(false, [
     'Lays Original',
@@ -159,27 +159,27 @@ function chips() {
 
   chipsDesc.append(chipsList, chipsPrice);
 
-  const chips = createCard(chipsSide, 'Chips!', chipsDesc);
+  const chipsDiv = createCard(chipsSide, 'Chips!', chipsDesc);
 
-  return chips;
+  return chipsDiv;
 }
 
 function sides() {
-  const sides = createElement('div', ['sides']);
+  const sidesDiv = createElement('div', ['sides']);
   const sideCards = createElement('div', ['sides-cards']);
   const sidesAttribution = createAnchor(
-    'https://unsplash.com/photos/a7L6qXrbNLc',
     ['attribution', 'link'],
-    'Image Courtesy of Syed F Hashemi at Unsplash'
+    'Image Courtesy of Syed F Hashemi at Unsplash',
+    'https://unsplash.com/photos/a7L6qXrbNLc'
   );
 
-  sides.appendChild(sideCards);
+  sidesDiv.appendChild(sideCards);
   sideCards.append(fries());
   sideCards.append(poutine());
   sideCards.append(chips());
-  sides.append(sidesAttribution);
+  sidesDiv.append(sidesAttribution);
 
-  return sides;
+  return sidesDiv;
 }
 
 function drinkHeader(): HTMLElement {
@@ -212,43 +212,43 @@ function pops(): HTMLElement {
 }
 
 function beer(): HTMLElement {
-  const beer = createCard(
+  const beerDiv = createCard(
     '',
     'Craft Beer!',
-    'Our craft beer rotates out on a\
-    monthly basis. Please ask our staff about our latest offering!\n\n$8.00'
+    'Our craft beer rotates out on a monthly basis. Please ask our staff' +
+      'about our latest offering!\n\n$8.00'
   );
 
-  return beer;
+  return beerDiv;
 }
 
 function drinks() {
-  const drinks = createElement('div', ['drinks']);
+  const drinksDiv = createElement('div', ['drinks']);
   const drinkCards = createElement('div', ['drink-cards']);
   const drinksAttribution = createAnchor(
-    'https://unsplash.com/photos/qbGauEOjoAs',
     ['attribution', 'link'],
-    'Image Courtesy of James yarema at Unsplash'
+    'Image Courtesy of James yarema at Unsplash',
+    'https://unsplash.com/photos/qbGauEOjoAs'
   );
 
-  drinks.appendChild(drinkCards);
+  drinksDiv.appendChild(drinkCards);
   drinkCards.appendChild(pops());
   drinkCards.appendChild(beer());
-  drinks.appendChild(drinksAttribution);
+  drinksDiv.appendChild(drinksAttribution);
 
-  return drinks;
+  return drinksDiv;
 }
 
 export default function menu(): HTMLElement {
-  const menu = createElement('div');
+  const menuDiv = createElement('div');
 
-  menu.appendChild(menuTitle());
-  menu.appendChild(dogsHeader());
-  menu.appendChild(dogs());
-  menu.appendChild(sideHeader());
-  menu.appendChild(sides());
-  menu.appendChild(drinkHeader());
-  menu.appendChild(drinks());
+  menuDiv.appendChild(menuTitle());
+  menuDiv.appendChild(dogsHeader());
+  menuDiv.appendChild(dogs());
+  menuDiv.appendChild(sideHeader());
+  menuDiv.appendChild(sides());
+  menuDiv.appendChild(drinkHeader());
+  menuDiv.appendChild(drinks());
 
-  return menu;
+  return menuDiv;
 }

@@ -40,13 +40,13 @@ export function createElement(
 // Separate function since createElement() provides an HTMLElement, meanwhile
 // we need an HTMLAnchorElement to set href.
 export function createAnchor(
+  classes?: string[],
+  innerText?: string,
   /**
    * @defaultValue
    * Is set to '#' when not declared.
    */
-  href: string = '#',
-  classes?: string[],
-  innerText?: string
+  href: string = '#'
 ): HTMLAnchorElement {
   const element: HTMLAnchorElement = document.createElement('a');
   element.href = href;
