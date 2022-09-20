@@ -18,7 +18,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'boilerplate',
+      title: 'Fatty Dog\'s Fat Dogs',
       template: 'src/index.html',
       // inject: false,
       inject: true,

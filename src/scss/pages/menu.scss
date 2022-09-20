@@ -69,7 +69,7 @@
   .dog-cards {
     @extend .width-800px;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 375px;
     gap: 50px;
     margin-top: 25px;
   }
@@ -98,5 +98,19 @@
   .list-item {
     list-style-type: disc;
     margin-left: 25px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .dogs {
+    .dog-cards {
+      max-width: 800px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      justify-content: center;
+      gap: 50px;
+      margin-top: 25px;
+    }
   }
 }
