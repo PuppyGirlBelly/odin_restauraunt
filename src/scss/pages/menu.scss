@@ -70,6 +70,7 @@
     @extend .width-800px;
     display: grid;
     grid-template-columns: 375px;
+    justify-content: center;
     gap: 50px;
     margin-top: 25px;
   }
@@ -104,13 +105,7 @@
 @media screen and (min-width: 800px) {
   .dogs {
     .dog-cards {
-      max-width: 800px;
-      margin: auto;
-      display: grid;
       grid-template-columns: repeat(2, 1fr);
-      justify-content: center;
-      gap: 50px;
-      margin-top: 25px;
     }
   }
 }

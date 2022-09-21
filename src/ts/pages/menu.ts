@@ -34,28 +34,28 @@ function dogs() {
   const card1 = createCard(
     plainDog,
     'Plain+ Dog!',
-    'A plain dog! But not just a plain dog! We will add any toppings you' +
+    'A plain dog! But not just a plain dog! We will add any toppings you ' +
       "want, just ask one of our staff for a list and we'll build it to your" +
       'liking! Or keep it plain! \n\n $4.00'
   );
   const card2 = createCard(
     chiliDog,
     'Chili Cheese Dog!',
-    'A classic Chili Cheese Dog! Gots the chili on it, and the cheese, some' +
-      'grilled onions, and an all-beef dog sitting on a bed of our Signature' +
+    'A classic Chili Cheese Dog! Gots the chili on it, and the cheese, some ' +
+      'grilled onions, and an all-beef dog sitting on a bed of our Signature ' +
       'Dog Sauce! \n\n $8.00'
   );
   const card3 = createCard(
     spicyDog,
     "The Hot 'n Spicy Dog!",
-    'A real hot dog! Made fresh with our spicy pepper relish, cilantro,' +
+    'A real hot dog! Made fresh with our spicy pepper relish, cilantro, ' +
       'jalapeño aoili and our Signature Dog Sauce! \n\n $6.00'
   );
   const card4 = createCard(
     chickDog,
     'The Chicken Dog!',
-    'The chaotic good dog! Have a chicken tender seated in a bun with' +
-      'Japanese Mayo and Sweet Chili Sauce! Or ask our staff for other' +
+    'The chaotic good dog! Have a chicken tender seated in a bun with ' +
+      'Japanese Mayo and Sweet Chili Sauce! Or ask our staff for other ' +
       'toppings!\n\n $6.00'
   );
 
@@ -91,8 +91,8 @@ function fries() {
   const friesDesc = createElement(
     'div',
     undefined,
-    'Your classic shoestring french fries, made with russet potatoes and' +
-      'premium seasonings! Comes with your choice of ketchup, japanese mayo,' +
+    'Your classic shoestring french fries, made with russet potatoes and ' +
+      'premium seasonings! Comes with your choice of ketchup, japanese mayo, ' +
       'or jalapeño aoili!\n'
   );
   const friesList = createList(false, [
@@ -118,7 +118,7 @@ function poutine() {
   const poutineDesc = createElement(
     'div',
     undefined,
-    'Our favorite poutine, made with russet potatoes, sausage gravy, and' +
+    'Our favorite poutine, made with russet potatoes, sausage gravy, and ' +
       'topped with our meanest spices! Go ahead, treat yourself!\n\n'
   );
   const poutineList = createList(false, [
@@ -144,7 +144,7 @@ function chips() {
   const chipsDesc = createElement(
     'div',
     undefined,
-    'Your favorite classic snacks, what goes better with (or on top) of a' +
+    'Your favorite classic snacks, what goes better with (or on top) of a ' +
       'good dog?\n\n'
   );
   const chipsList = createList(false, [
@@ -215,7 +215,7 @@ function beer(): HTMLElement {
   const beerDiv = createCard(
     '',
     'Craft Beer!',
-    'Our craft beer rotates out on a monthly basis. Please ask our staff' +
+    'Our craft beer rotates out on a monthly basis. Please ask our staff ' +
       'about our latest offering!\n\n$8.00'
   );
 
